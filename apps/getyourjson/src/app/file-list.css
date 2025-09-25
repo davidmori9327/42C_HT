@@ -1,0 +1,34 @@
+.table tbody tr:hover {
+		background-color: #FFFAFA;
+}
+th {
+		background-color: #F8F8F8;
+	}
+
+	.files-page-bg {
+		background: #fff;
+		position: relative;
+		padding-bottom: 72px;
+}
+.pagination {
+		position: static;
+		bottom: 24px;
+		left: 100px;
+}
+.pagination-bar-container {
+		position: absolute;
+		left: 32px;
+		right: 32px;
+		bottom: 24px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: auto;
+		max-width: none;
+		box-sizing: border-box;
+		padding: 0;
+
+}
+.table-pagination {
+		margin-left: 50px;
+}

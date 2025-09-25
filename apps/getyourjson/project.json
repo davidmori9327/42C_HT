@@ -54,6 +54,11 @@
     "serve": {
       "continuous": true,
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "headers": {
+          "Content-Security-Policy": "default-src 'self' 'unsafe-inline' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-eval' 'unsafe-inline';"
+        }
+      },
       "configurations": {
         "production": {
           "buildTarget": "getyourjson:build:production"

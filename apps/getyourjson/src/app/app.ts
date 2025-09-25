@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { Store } from '@ngrx/store';
+import { loadFiles } from './store/file.actions';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  imports: [RouterModule],
   selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.scss',
+  styleUrls: ['./app.scss'],
 })
 export class App {
   protected title = 'getyourjson';
+
+  constructor(private store: Store) {
+    this.store.dispatch(loadFiles());
+  }
 }

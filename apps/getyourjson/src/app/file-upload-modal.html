@@ -1,0 +1,20 @@
+<div class="modal-backdrop"></div>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title">Select file</span>
+      <button type="button" class="btn-close" aria-label="Close" (click)="close.emit()"></button>
+    </div>
+    <form (ngSubmit)="onUpload()" #uploadForm="ngForm">
+      <div class="modal-body">
+        <input type="file" class="form-control" required (change)="onFileChange($event)" />
+        <input type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="name" required minlength="1" maxlength="32" />
+        <input type="text" class="form-control" placeholder="Description" name="description" [(ngModel)]="description" maxlength="128" />
+      </div>
+        <div class="modal-footer flat-footer">
+          <button type="button" class="btn btn-light" (click)="close.emit()">Cancel</button>
+          <button type="submit" class="btn btn-primary" [disabled]="!file || !name">Upload</button>
+        </div>
+    </form>
+  </div>
+</div>
