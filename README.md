@@ -53,7 +53,7 @@ You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx 
 [Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
 ## Set up CI!
-
+sssssss
 ### Step 1
 
 To connect to Nx Cloud, run the following command:
