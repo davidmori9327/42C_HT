@@ -1,8 +1,0 @@
-<div class="welcome-card">
-  <img src="assets/images/card.png" alt="Welcome illustration" class="welcome-image" />
-  <h2 class="welcome-title">Welcome!</h2>
-  <p class="welcome-desc">Upload JSON files in a quick and efficient way.</p>
-  <a class="welcome-link" routerLink="/files">{{ fileCount$ | async }} files uploaded already</a>
-  <button class="welcome-upload-btn" (click)="openUploadModal()">Upload file</button>
-  <app-file-upload-modal *ngIf="showUploadModal()" (close)="closeUploadModal()"></app-file-upload-modal>
-</div>
