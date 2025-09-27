@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "dist/apps/getyourjson/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/apps/getyourjson/index.html"
+    }
+  ],
+  "buildCommand": "npx nx build getyourjson --configuration=production",
+  "outputDirectory": "dist/apps/getyourjson"
+}

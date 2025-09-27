@@ -1,0 +1,16 @@
+<td>
+  <img src="assets/images/icon_fileuploaded.png" alt="file icon" style="width:20px;margin-right:8px;" />
+  {{ file.filename }}
+</td>
+<td>{{ file.name }}</td>
+<td>{{ file.description }}</td>
+<td>
+  <span [ngClass]="file.isValid ? 'badge bg-success' : 'badge bg-danger'">
+    {{ file.isValid ? 'Valid' : 'Not valid' }}
+  </span>
+</td> 
+<td>
+  <button class="btn btn-link text-danger p-0" (click)="onDelete()" title="Delete">
+    <i class="bi bi-trash" style="font-size:18px;"></i>
+  </button>
+</td>

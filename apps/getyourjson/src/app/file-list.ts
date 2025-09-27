@@ -1,19 +1,20 @@
 
 
 import { Component, signal } from '@angular/core';
-import { CommonModule, NgClass } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { FileUploadModalComponent } from './file-upload-modal';
 import { ConfirmDeleteModalComponent } from './confirm-delete-modal';
+import { FileListItemComponent } from './file-list-item';
 import { FileItem } from './store/file.model';
 import { selectAllFiles } from './store/file.selectors';
 
 @Component({
   selector: 'app-file-list',
   standalone: true,
-  imports: [CommonModule, NgClass, FormsModule, FileUploadModalComponent, ConfirmDeleteModalComponent],
+  imports: [CommonModule, FormsModule, FileUploadModalComponent, ConfirmDeleteModalComponent, FileListItemComponent],
   templateUrl: './file-list.html',
   styleUrls: ['./file-list.css'],
 })

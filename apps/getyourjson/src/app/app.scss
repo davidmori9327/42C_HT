@@ -60,3 +60,77 @@ a {
 .btn-primary:hover {
   background: #2566c7;
 }
+
+.navbar {
+  background: #007bff;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.brand-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 4px;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-button.active {
+  color: #fff;
+  font-weight: 600;
+}
+
+
+.main-content {
+  background: #fff;
+  min-height: calc(100vh - 64px);
+}

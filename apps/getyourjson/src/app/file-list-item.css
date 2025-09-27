@@ -1,0 +1,18 @@
+/* Basic styles for file list item, can be extended for Figma match */
+:host {
+  display: contents;
+}
+
+.badge {
+  font-size: 0.95em;
+}
+
+td {
+  padding-left: 15px;
+  vertical-align: middle;
+}
+
+td:last-child {
+  text-align: right;
+  padding-right: 10px;
+}

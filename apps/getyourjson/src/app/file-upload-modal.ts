@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
@@ -12,7 +12,7 @@ import { JsonValidatorService } from './services/json-validator.service';
   templateUrl: './file-upload-modal.html',
   styleUrls: ['./file-upload-modal.css'],
 })
-export class FileUploadModalComponent {
+export class FileUploadModalComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<void>();
 
   public name = '';
@@ -30,6 +30,14 @@ export class FileUploadModalComponent {
     private store: Store,
     private jsonValidator: JsonValidatorService
   ) {}
+
+  ngOnInit() {
+    document.body.classList.add('modal-open');
+  }
+
+  ngOnDestroy() {
+    document.body.classList.remove('modal-open');
+  }
 
   onFileSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -101,12 +109,24 @@ export class FileUploadModalComponent {
     this.store.dispatch(addFile({ file: fileItem }));
     setTimeout(() => {
       this.isSubmitting = false;
+      document.body.classList.remove('modal-open');
       this.close.emit();
     }, 500);
   }
 
   onCancel() {
+    document.body.classList.remove('modal-open');
     this.close.emit();
+  }
+
+  validateName() {
+    const nameValidation = this.jsonValidator.validateFileName(this.name);
+    this.nameErrors = nameValidation.errors;
+  }
+
+  validateDescription() {
+    const descValidation = this.jsonValidator.validateDescription(this.description);
+    this.descriptionErrors = descValidation.errors;
   }
 
   onFileChange(event: Event) {
@@ -115,34 +135,6 @@ export class FileUploadModalComponent {
       this.file = input.files[0];
     } else {
       this.file = null;
-    }
-  }
-
-  onUpload() {
-    if (this.file && this.name) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        let isValid = true;
-        let content = '';
-        try {
-          content = reader.result as string;
-          JSON.parse(content);
-        } catch {
-          isValid = false;
-        }
-        const fileItem: FileItem = {
-          id: crypto.randomUUID(),
-          filename: this.file!.name,
-          name: this.name,
-          description: this.description,
-          content,
-          isValid,
-          uploadDate: new Date()
-        };
-        this.store.dispatch(addFile({ file: fileItem }));
-        this.close.emit();
-      };
-      reader.readAsText(this.file);
     }
   }
 }
