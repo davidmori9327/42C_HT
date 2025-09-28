@@ -16,7 +16,8 @@
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  width: 400px;
+  width: 623px;
+  height: 245px;
   z-index: 1050;
 }
 
@@ -62,6 +63,7 @@
 
 .modal-body {
   padding: 0 24px 20px 24px;
+  margin-top: 20px;
 }
 
 .modal-body p {
@@ -77,6 +79,7 @@
   gap: 12px;
   padding: 16px 24px 20px 24px;
   border-top: none;
+  margin-top: 40px;
 }
 
 .btn-cancel {
