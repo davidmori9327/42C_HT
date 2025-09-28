@@ -30,7 +30,7 @@ export class JsonValidatorService {
     
     // Check for required substring (42c-[your-github-username])
     // For demo purposes, using a placeholder username
-    const requiredSubstring = '42c-davidmori';
+    const requiredSubstring = '42c-davidmori9327';
     if (!name.includes(requiredSubstring)) {
       errors.push(`Name must contain '${requiredSubstring}'`);
     }
@@ -50,7 +50,7 @@ export class JsonValidatorService {
     }
     
     // Check that it doesn't contain the forbidden substring
-    const forbiddenSubstring = '42c-davidmori';
+    const forbiddenSubstring = '42c-davidmori9327';
     if (description.includes(forbiddenSubstring)) {
       errors.push(`Description must not contain '${forbiddenSubstring}'`);
     }
