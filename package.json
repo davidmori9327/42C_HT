@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    
+    "build": "yarn nx run getyourjson:build"
   },
   "private": true,
   "dependencies": {
